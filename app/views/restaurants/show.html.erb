@@ -1,0 +1,16 @@
+<h1><strong><%= @restaurant.name %></strong></h1>
+
+<h3>Food style: <%= @restaurant.category %></h3>
+
+<h4>Address: <%= @restaurant.address %></h4>
+
+<h4>Reservations: <% if @restaurant.phone_number == nil %>
+    No phone for reservations
+    <% else %>
+      <%= @restaurant.phone_number %>
+<% end %></h4>
+
+<h4>Reviews: <%= @restaurant.review %></h4>
+<%= link_to "Back to home", restaurants_path %>
+
+<%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
